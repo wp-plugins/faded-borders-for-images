@@ -118,4 +118,3 @@ if (!is_admin()) {
 }
 add_action('admin_menu','modify_menu');
 ?>
-
