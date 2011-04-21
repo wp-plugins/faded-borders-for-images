@@ -102,14 +102,15 @@ function my_init() {
 
 	$curr_border = get_option('border_color');
 
-	?><div id="thedivthathasthecolor" style="display: none;" class="<?php print "$curr_border"; ?>"><?php print "$curr_border"; ?></div><?php
+	?><span id="thedivthathasthecolor" style="display: none;" class="<?php print "$curr_border"; ?>"><?php print "$curr_border"; ?></span><?php
 //If we wanted to, we could un-comment the following lines to register jQuery via Google instead of Wordpress.
 //		wp_deregister_script('jquery');
 //		wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js', false, '1.5.2');
 		wp_enqueue_script('jquery');
 
 		// load the .js file we need to adjust the tagged images.
-		wp_enqueue_script('my_script', get_bloginfo('url') . '/wp-content/plugins/faded-borders-for-images/border.js', array('jquery'));
+		$bloginfourl = get_bloginfo('url');
+		wp_enqueue_script('my_script', $bloginfourl . '/wp-content/plugins/faded-borders-for-images/border.js', array('jquery'));
 	}
 }
 
