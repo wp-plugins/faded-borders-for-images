@@ -49,6 +49,7 @@ your Wordpress theme, if your theme is not publicly licensed.
 This section is empty.
 
 == Changelog ==
+Fixed a problem causing the url to display at the top of each page.
 Fixed a glitch in the folder reference.
 
 = 1.0.2 =
