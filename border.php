@@ -109,7 +109,7 @@ function my_init() {
 		wp_enqueue_script('jquery');
 
 		// load the .js file we need to adjust the tagged images.
-		wp_enqueue_script('my_script', bloginfo('url') . '/wp-content/plugins/faded-borders-for-images/border.js', array('jquery'));
+		wp_enqueue_script('my_script', get_bloginfo('url') . '/wp-content/plugins/faded-borders-for-images/border.js', array('jquery'));
 	}
 }
 
