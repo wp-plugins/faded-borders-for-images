@@ -3,7 +3,7 @@ Contributors: quinnthehuskey
 Tags: border, images, gradient, fade, faded
 Requires at least: 3.1.1
 Tested up to: 3.1.1
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 
 This plugin lets you place a faded border around any image file.
 
@@ -50,6 +50,9 @@ This section is empty.
 
 == Changelog ==
 Fixed a glitch in the folder reference.
+
+= 1.0.2 =
+*Changed bloginfo('url') to get_bloginfo('url')
 
 = 1.0.1 =
 *Fixed a glitch in the plugin folder

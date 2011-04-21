@@ -2,7 +2,7 @@
 /*
 Plugin Name: Faded Borders for Images
 Description: This plugin allows users to fade the edges of their images with a white gradient border.
-Version: 1.0.1
+Version: 1.0.2
 Author: David Cox
 License: GPL2
 
