@@ -97,15 +97,12 @@ function modify_menu() {
 	);
 }
 
-function my_init() {
+function load_jquery_for_real(){
 	if (!is_admin()) {
 
-	$curr_border = get_option('border_color');
-
-	?><span id="thedivthathasthecolor" style="display: none;" class="<?php print "$curr_border"; ?>"><?php print "$curr_border"; ?></span><?php
-//If we wanted to, we could un-comment the following lines to register jQuery via Google instead of Wordpress.
-//		wp_deregister_script('jquery');
-//		wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js', false, '1.5.2');
+		//If we wanted to, we could un-comment the following lines to register jQuery via Google instead of Wordpress.
+		//		wp_deregister_script('jquery');
+		//		wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js', false, '1.5.2');
 		wp_enqueue_script('jquery');
 
 		// load the .js file we need to adjust the tagged images.
@@ -114,8 +111,32 @@ function my_init() {
 	}
 }
 
+function my_init() {
+	if (!is_admin()) {
+
+	$curr_border = "#" . get_option('border_color');
+
+	// OLD WAY
+	// <span id="thedivthathasthecolor" style="display: none;" class="php print "$curr_border"; ">php print "$curr_border"; </span>
+
+	// NEW WAY
+?>
+
+<script type="text/javascript">
+	var $theColor = "<?php echo $curr_border; ?>";
+	// alert($theColor);
+	$(document).ready(function(){ 
+		fadeThemBorders($theColor); 
+	});
+</script>
+<?php
+ }
+} // END FUNCTION
+
 if (!is_admin()) {
-	add_action('init', 'my_init');
+	// add_action('init', 'my_init');
+	add_action('init', 'load_jquery_for_real');
+	add_action('wp_head', 'my_init');
 }
 add_action('admin_menu','modify_menu');
 ?>

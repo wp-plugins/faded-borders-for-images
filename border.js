@@ -1,8 +1,11 @@
-$(window).load(function() {
+function fadeThemBorders(xyz){
+	//alert("Called");
 
 // Get all of the gradient images and loop
 // over them using jQuery implicit iteration.
+
 $("img.gradient").each(function(intIndex){
+	//alert("Found an image");
 
 	//Wrap a div around the image
 
@@ -13,7 +16,7 @@ $("img.gradient").each(function(intIndex){
 	var ParentElement = null;
 	var jDiv = null;
 	var intStep = 0;
-	var curr_border = $('#thedivthathasthecolor').attr('class');
+	var curr_border = xyz;
 	var classes = $(this).attr('class');
 
 	// Get the parent
@@ -168,4 +171,4 @@ $("img.gradient").each(function(intIndex){
 
 });
 
-});
+}
